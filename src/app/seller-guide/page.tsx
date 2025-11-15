@@ -295,7 +295,7 @@ export default function SellerGuidePage() {
                 placeholder=\"Buscar artigos, tutoriais e dicas...\"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className=\"w-full pl-12 pr-4 py-4 rounded-xl border-0 shadow-2xl focus:ring-4 focus:ring-purple-300 transition-all text-lg\"
+                className=\"w-full pl-12 pr-4 py-4 rounded-xl border-0 shadow-2xl focus:ring-4 focus:ring-purple-300 transition-all text-lg text-gray-900\"
               />
             </div>
           </div>

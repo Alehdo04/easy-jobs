@@ -4,9 +4,6 @@ import { createClient } from '@supabase/supabase-js';
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co';
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBsYWNlaG9sZGVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDUxOTI4MDAsImV4cCI6MTk2MDc2ODgwMH0.placeholder';
 
-// Criar cliente Supabase apenas se configurado corretamente
-export const supabase = isSupabaseConfigured() ? createClient(supabaseUrl, supabaseAnonKey) : null;
-
 // Verificar se as credenciais estão configuradas
 export const isSupabaseConfigured = () => {
   return supabaseUrl !== 'https://placeholder.supabase.co' &&
@@ -14,6 +11,9 @@ export const isSupabaseConfigured = () => {
          supabaseUrl.startsWith('https://') &&
          supabaseAnonKey.length > 50;
 };
+
+// Criar cliente Supabase apenas se configurado corretamente
+export const supabase = isSupabaseConfigured() ? createClient(supabaseUrl, supabaseAnonKey) : null;
 
 // Tipos para o banco de dados
 export type UserProfile = {
